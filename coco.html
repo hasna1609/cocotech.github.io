@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="CocoTech Craft - Crafting the Future with Coconut Waste" data-id="CocoTech Craft - Merajut Masa Depan dengan Limbah Kelapa">CocoTech Craft - Crafting the Future with Coconut Waste</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for easy theme management */
+        :root {
+            --primary-white: #FFFFFF;
+            --warm-brown: #8B4513; /* SaddleBrown */
+            --light-brown: #D2B48C; /* Tan */
+            --text-color: #333333;
+            --light-grey: #F8F8F8;
+            --border-color: #E0E0E0;
+            --button-hover-darken: 10%; /* Percentage to darken buttons on hover */
+        }
+
+        /* Base styles for body and typography */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter as requested */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--primary-white);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+
+        /* Universal container for content width */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header Styles --- */
+        header {
+            background-color: var(--primary-white);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky; /* Sticky header for navigation */
+            top: 0;
+            z-index: 1000; /* Ensure header is above other content */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--warm-brown);
+            text-decoration: none;
+            border-radius: 5px; /* Rounded corners for logo */
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 5px 0; /* Add padding for better hover area */
+        }
+
+        .nav-links a:hover {
+            color: var(--warm-brown);
+        }
+
+        .language-switcher button {
+            background: none;
+            border: 1px solid var(--warm-brown);
+            color: var(--warm-brown);
+            padding: 8px 12px;
+            border-radius: 5px; /* Rounded corners for buttons */
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .language-switcher button.active,
+        .language-switcher button:hover {
+            background-color: var(--warm-brown);
+            color: var(--primary-white);
+        }
+
+        /* --- Hero Section Styles --- */
+        .hero {
+            /* Placeholder image for hero section */
+            background: url('https://placehold.co/1600x800/D2B48C/8B4513?text=CocoTech+Craft+Hero+Image') no-repeat center center/cover;
+            color: var(--primary-white);
+            text-align: center;
+            padding: 150px 20px;
+            min-height: 70vh; /* Minimum height for hero section */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 10px; /* Rounded corners for the hero section */
+            margin: 20px; /* Margin around the hero section */
+            overflow: hidden; /* Hide overflow from rounded corners */
+        }
+
+        /* Overlay for better text readability on hero image */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1; /* Ensure content is above the overlay */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for readability */
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            font-weight: 300;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-buttons .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px; /* More rounded buttons */
+            font-weight: 600;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Button shadow */
+        }
+
+        .hero-buttons .btn-primary {
+            background-color: var(--warm-brown);
+            color: var(--primary-white);
+            border: 2px solid var(--warm-brown);
+        }
+
+        .hero-buttons .btn-primary:hover {
+            background-color: #7A3B10; /* Slightly darker brown */
+            border-color: #7A3B10;
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+
+        .hero-buttons .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-white);
+            border: 2px solid var(--primary-white);
+        }
+
+        .hero-buttons .btn-secondary:hover {
+            background-color: var(--primary-white);
+            color: var(--warm-brown);
+            transform: translateY(-2px);
+        }
+
+        /* --- General Section Styles --- */
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--light-grey);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--warm-brown);
+            font-weight: 600;
+        }
+
+        /* --- About Us Section Styles --- */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            text-align: left;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            justify-content: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px; /* Minimum width before wrapping */
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px; /* Max width for image to prevent excessive stretching */
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Featured Products Section Styles --- */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background-color: var(--primary-white);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Ensure images cover the area */
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.4em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--warm-brown);
+            font-weight: 600;
+        }
+
+        .product-info p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 20px;
+            min-height: 60px; /* Ensure consistent height for descriptions */
+        }
+
+        .product-card .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--warm-brown);
+            color: var(--primary-white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-card .btn:hover {
+            background-color: #7A3B10;
+        }
+
+        /* --- Why Choose Us Section Styles --- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            background-color: var(--primary-white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-item .icon {
+            font-size: 3em;
+            color: var(--warm-brown);
+            margin-bottom: 20px;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.3em;
+            color: var(--warm-brown);
+            margin-bottom: 15px;
+        }
+
+        .benefit-item p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* --- Testimonials Section Styles --- */
+        .testimonials-slider {
+            display: flex;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Snap to cards */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            padding-bottom: 20px;
+            margin-top: 50px;
+            gap: 30px;
+            justify-content: center; /* Center items if few */
+            padding-left: 20px; /* Padding for the first card to be visible */
+            padding-right: 20px; /* Padding for the last card to be visible */
+        }
+
+        .testimonial-card {
+            flex: 0 0 450px; /* Fixed width for cards, adjust as needed */
+            scroll-snap-align: start;
+            background-color: var(--primary-white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            position: relative;
+            min-height: 180px; /* Ensure consistent height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #444;
+            font-size: 1.1em;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--warm-brown);
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img.flag {
+            width: 24px;
+            height: 16px;
+            margin-left: 10px;
+            vertical-align: middle;
+            border: 1px solid var(--border-color);
+            border-radius: 3px; /* Slightly rounded flag corners */
+        }
+
+        /* --- Contact Section Styles --- */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            text-align: left;
+        }
+
+        .contact-info, .contact-form-container {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px; /* Limit max width for form/info */
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .contact-info a {
+            color: var(--warm-brown);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 20px;
+            font-size: 2em; /* Adjust icon size */
+            color: var(--warm-brown);
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+
+        .social-links img {
+            width: 30px; /* Ensure consistent icon size */
+            height: 30px;
+            filter: brightness(0.6) sepia(1) hue-rotate(0deg) saturate(200%); /* Adjust icon color to brown */
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            box-sizing: border-box; /* Include padding in width */
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--warm-brown);
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical; /* Allow vertical resizing */
+        }
+
+        .contact-form button {
+            background-color: var(--warm-brown);
+            color: var(--primary-white);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form button:hover {
+            background-color: #7A3B10;
+            transform: translateY(-2px);
+        }
+
+        /* --- Footer Styles --- */
+        footer {
+            background-color: var(--warm-brown);
+            color: var(--primary-white);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+            border-top-left-radius: 10px; /* Rounded top corners for footer */
+            border-top-right-radius: 10px;
+            margin-top: 20px; /* Margin above footer */
+        }
+
+        footer .footer-links a {
+            color: var(--primary-white);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: text-decoration 0.3s ease;
+        }
+
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide navigation links on smaller screens */
+            }
+
+            .hero {
+                padding: 100px 20px;
+                min-height: 60vh;
+            }
+
+            .hero h1 {
+                font-size: 2.2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .hero-buttons .btn {
+                display: block;
+                margin: 15px auto;
+                width: 80%; /* Make buttons full width on mobile */
+            }
+
+            .about-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .about-image {
+                order: -1; /* Image above text on mobile */
+                margin-bottom: 30px;
+            }
+
+            .products-grid, .benefits-grid {
+                grid-template-columns: 1fr; /* Single column layout */
+            }
+
+            .testimonial-card {
+                flex: 0 0 90%; /* Take more width on mobile */
+                margin: 0 auto; /* Center cards in slider */
+            }
+
+            .testimonials-slider {
+                justify-content: flex-start; /* Align to start for better scrolling experience */
+            }
+
+            .contact-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">CocoTech Craft</a>
+                <div class="nav-links">
+                    <a href="#about" data-en="About Us" data-id="Tentang Kami">About Us</a>
+                    <a href="#products" data-en="Products" data-id="Produk">Products</a>
+                    <a href="#why-choose-us" data-en="Why Choose Us" data-id="Mengapa Kami">Why Choose Us</a>
+                    <a href="#testimonials" data-en="Testimonials" data-id="Testimoni">Testimonials</a>
+                    <a href="#contact" data-en="Contact" data-id="Kontak">Contact</a>
+                </div>
+                <div class="language-switcher">
+                    <button id="lang-en" class="active">EN</button>
+                    <button id="lang-id">ID</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 data-en="Crafting the Future with Coconut Waste" data-id="Merajut Masa Depan dengan Limbah Kelapa">Crafting the Future with Coconut Waste</h1>
+                <p data-en="Discover innovative, sustainable household crafts that blend natural beauty with smart technology." data-id="Temukan kerajinan rumah tangga inovatif dan berkelanjutan yang memadukan keindahan alami dengan teknologi cerdas.">Discover innovative, sustainable household crafts that blend natural beauty with smart technology.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary" data-en="Shop Now" data-id="Belanja Sekarang">Shop Now</a>
+                    <a href="#contact" class="btn btn-secondary" data-en="Contact Us" data-id="Hubungi Kami">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="container">
+            <h2 data-en="Our Story" data-id="Kisah Kami">Our Story</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-en="At CocoTech Craft, we're on a mission to transform discarded coconut shells into functional art. We believe in sustainable living, innovation, and empowering local artisans." data-id="Di CocoTech Craft, kami memiliki misi untuk mengubah limbah tempurung kelapa menjadi karya seni fungsional. Kami percaya pada gaya hidup berkelanjutan, inovasi, dan pemberdayaan perajin lokal.">At CocoTech Craft, we're on a mission to transform discarded coconut shells into functional art. We believe in sustainable living, innovation, and empowering local artisans.</p>
+                    <p data-en="We are committed to upcycling waste, minimizing our environmental footprint, and promoting a circular economy. Every product reflects our dedication to a greener planet." data-id="Kami berkomitmen untuk mendaur ulang limbah, meminimalkan jejak lingkungan kami, dan mempromosikan ekonomi sirkular. Setiap produk mencerminkan dedikasi kami untuk planet yang lebih hijau.">We are committed to upcycling waste, minimizing our environmental footprint, and promoting a circular economy. Every product reflects our dedication to a greener planet.</p>
+                    <p data-en="Our unique pieces are meticulously handcrafted by skilled local artisans, blending traditional craftsmanship with modern design principles. This ensures fair wages and supports community growth." data-id="Karya unik kami dibuat dengan cermat oleh perajin lokal terampil, memadukan keahlian tradisional dengan prinsip desain modern. Ini memastikan upah yang adil dan mendukung pertumbuhan komunitas.">Our unique pieces are meticulously handcrafted by skilled local artisans, blending traditional craftsmanship with modern design principles. This ensures fair wages and supports community growth.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder image for artisan at work -->
+                    <img src="https://placehold.co/500x350/D2B48C/8B4513?text=Artisan+at+Work" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section id="products" class="container">
+            <h2 data-en="Our Creations" data-id="Kreasi Kami">Our Creations</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <!-- Placeholder image for Eco Smart Lamp -->
+                    <img src="https://placehold.co/400x250/D2B48C/8B4513?text=Eco+Smart+Lamp" alt="">
+                    <div class="product-info">
+                        <h3 data-en="Eco Smart Lamp" data-id="Lampu Cerdas Ramah Lingkungan">Eco Smart Lamp</h3>
+                        <p data-en="An elegant lamp crafted from a polished coconut shell, integrated with smart lighting features controllable via an app." data-id="Lampu elegan yang dibuat dari tempurung kelapa yang dipoles, terintegrasi dengan fitur pencahayaan cerdas yang dapat dikontrol melalui aplikasi.">An elegant lamp crafted from a polished coconut shell, integrated with smart lighting features controllable via an app.</p>
+                        <a href="#" class="btn" data-en="View Product" data-id="Lihat Produk">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <!-- Placeholder image for Coco Organizer -->
+                    <img src="https://placehold.co/400x250/D2B48C/8B4513?text=Coco+Organizer" alt="">
+                    <div class="product-info">
+                        <h3 data-en="Coco Organizer" data-id="Organizer Kelapa">Coco Organizer</h3>
+                        <p data-en="A versatile desk organizer or storage solution, featuring natural coconut shell partitions for a rustic yet modern touch." data-id="Organizer meja atau solusi penyimpanan serbaguna, menampilkan partisi tempurung kelapa alami untuk sentuhan pedesaan namun modern.">A versatile desk organizer or storage solution, featuring natural coconut shell partitions for a rustic yet modern touch.</p>
+                        <a href="#" class="btn" data-en="View Product" data-id="Lihat Produk">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <!-- Placeholder image for Shell Clock -->
+                    <img src="https://placehold.co/400x250/D2B48C/8B4513?text=Shell+Clock" alt="">
+                    <div class="product-info">
+                        <h3 data-en="Shell Clock" data-id="Jam Dinding Tempurung">Shell Clock</h3>
+                        <p data-en="A minimalist wall clock encased in a beautifully finished coconut shell, adding a unique organic element to any room." data-id="Jam dinding minimalis yang terbungkus dalam tempurung kelapa yang telah disempurnakan, menambahkan elemen organik unik ke setiap ruangan.">A minimalist wall clock encased in a beautifully finished coconut shell, adding a unique organic element to any room.</p>
+                        <a href="#" class="btn" data-en="View Product" data-id="Lihat Produk">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <!-- Placeholder image for Natural Speaker Case -->
+                    <img src="https://placehold.co/400x250/D2B48C/8B4513?text=Natural+Speaker+Case" alt="">
+                    <div class="product-info">
+                        <h3 data-en="Natural Speaker Case" data-id="Casing Speaker Alami">Natural Speaker Case</h3>
+                        <p data-en="An acoustic speaker case made from a resonant coconut shell, enhancing sound quality while providing a natural aesthetic." data-id="Casing speaker akustik yang terbuat dari tempurung kelapa yang resonan, meningkatkan kualitas suara sambil memberikan estetika alami.">An acoustic speaker case made from a resonant coconut shell, enhancing sound quality while providing a natural aesthetic.</p>
+                        <a href="#" class="btn" data-en="View Product" data-id="Lihat Produk">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us" class="container">
+            <h2 data-en="Why CocoTech Craft?" data-id="Mengapa CocoTech Craft?">Why CocoTech Craft?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="icon">✨</div> <!-- Placeholder for icon -->
+                    <h3 data-en="Handmade" data-id="Buatan Tangan">Handmade</h3>
+                    <p data-en="Each piece is lovingly handcrafted by skilled artisans, ensuring unique character and superior quality." data-id="Setiap karya dibuat dengan penuh kasih oleh perajin terampil, menjamin karakter unik dan kualitas superior.">Each piece is lovingly handcrafted by skilled artisans, ensuring unique character and superior quality.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">🌿</div> <!-- Placeholder for icon -->
+                    <h3 data-en="Eco-Friendly Materials" data-id="Bahan Ramah Lingkungan">Eco-Friendly Materials</h3>
+                    <p data-en="We transform discarded coconut shells into beautiful, functional products, championing sustainability and waste reduction." data-id="Kami mengubah limbah tempurung kelapa menjadi produk fungsional yang indah, memperjuangkan keberlanjutan dan pengurangan limbah.">We transform discarded coconut shells into beautiful, functional products, championing sustainability and waste reduction.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">💡</div> <!-- Placeholder for icon -->
+                    <h3 data-en="Smart IoT Integration" data-id="Integrasi IoT Cerdas">Smart IoT Integration</h3>
+                    <p data-en="Experience the perfect blend of natural aesthetics and modern convenience with our smart technology-infused crafts." data-id="Rasakan perpaduan sempurna antara estetika alami dan kenyamanan modern dengan kerajinan kami yang terintegrasi teknologi cerdas.">Experience the perfect blend of natural aesthetics and modern convenience with our smart technology-infused crafts.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">✈️</div> <!-- Placeholder for icon -->
+                    <h3 data-en="Worldwide Shipping" data-id="Pengiriman Seluruh Dunia">Worldwide Shipping</h3>
+                    <p data-en="Our unique creations can reach you, no matter where you are. We ship our eco-friendly products globally." data-id="Kreasi unik kami dapat menjangkau Anda, di mana pun Anda berada. Kami mengirimkan produk ramah lingkungan kami ke seluruh dunia.">Our unique creations can reach you, no matter where you are. We ship our eco-friendly products globally.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="container">
+            <h2 data-en="What Our Customers Say" data-id="Kata Pelanggan Kami">What Our Customers Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <p data-en="&ldquo;Absolutely stunning Eco Smart Lamp! It's a beautiful addition to my living room and I love the smart features. Highly recommend!&rdquo;" data-id="&ldquo;Lampu Cerdas Ramah Lingkungan yang sangat menakjubkan! Ini adalah tambahan yang indah untuk ruang tamu saya dan saya suka fitur cerdasnya. Sangat direkomendasikan!&rdquo;">&ldquo;Absolutely stunning Eco Smart Lamp! It's a beautiful addition to my living room and I love the smart features. Highly recommend!&rdquo;</p>
+                    <div class="testimonial-author">
+                        <span data-en="Sarah L." data-id="Sarah L.">Sarah L.</span>
+                        <!-- Flag image for USA -->
+                        <img src="https://flagcdn.com/us.svg" alt="[Flag of USA]" class="flag">
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p data-en="&ldquo;The Coco Organizer is perfect for my home office. It's practical, stylish, and I love that it's made from recycled materials.&rdquo;" data-id="&ldquo;Organizer Kelapa ini sempurna untuk kantor rumah saya. Praktis, stylish, dan saya suka karena terbuat dari bahan daur ulang.&rdquo;">&ldquo;The Coco Organizer is perfect for my home office. It's practical, stylish, and I love that it's made from recycled materials.&rdquo;</p>
+                    <div class="testimonial-author">
+                        <span data-en="David P." data-id="David P.">David P.</span>
+                        <!-- Flag image for United Kingdom -->
+                        <img src="https://flagcdn.com/gb.svg" alt="[Flag of United Kingdom]" class="flag">
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p data-en="&ldquo;I bought the Shell Clock as a gift, and my friend absolutely adores it! The craftsmanship is superb, and it arrived quickly in Australia.&rdquo;" data-id="&ldquo;Saya membeli Jam Dinding Tempurung sebagai hadiah, dan teman saya sangat menyukainya! Pengerjaannya luar biasa, dan tiba dengan cepat di Australia.&rdquo;">&ldquo;I bought the Shell Clock as a gift, and my friend absolutely adores it! The craftsmanship is superb, and it arrived quickly in Australia.&rdquo;</p>
+                    <div class="testimonial-author">
+                        <span data-en="Emily R." data-id="Emily R.">Emily R.</span>
+                        <!-- Flag image for Australia -->
+                        <img src="https://flagcdn.com/au.svg" alt="[Flag of Australia]" class="flag">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container">
+            <h2 data-en="Get in Touch" data-id="Hubungi Kami">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p data-en="Have questions or want to collaborate? Reach out to us!" data-id="Punya pertanyaan atau ingin berkolaborasi? Hubungi kami!">Have questions or want to collaborate? Reach out to us!</p>
+                    <p><strong data-en="Email:" data-id="Email:">Email:</strong> <a href="mailto:info@cocotechcraft.com">cocotechcraft@gmail.com</a></p>
+                    <div class="social-links">
+                        <!-- Social media icons from Icons8 CDN -->
+                        <a href="https://instagram.com/CocoTechCraft" target="_blank" aria-label="Instagram"><img src="https://img.icons8.com/ios-filled/50/8B4513/instagram-new.png" alt="[Instagram Icon]" width="30" height="30"></a>
+                        <a href="https://tiktok.com/@CocoTechCraft" target="_blank" aria-label="TikTok"><img src="https://img.icons8.com/ios-filled/50/8B4513/tiktok--v1.png" alt="[TikTok Icon]" width="30" height="30"></a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <label for="name" data-en="Name" data-id="Nama">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+
+                        <label for="email" data-en="Email" data-id="Email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Your Email">
+
+                        <label for="subject" data-en="Subject" data-id="Subjek">Subject</label>
+                        <input type="text" id="subject" name="subject" required placeholder="Message Subject">
+
+                        <label for="message" data-en="Message" data-id="Pesan">Message</label>
+                        <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+
+                        <button type="submit" data-en="Send Message" data-id="Kirim Pesan">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-en="&copy; 2025 CocoTech Craft. All rights reserved." data-id="&copy; 2025 CocoTech Craft. Hak cipta dilindungi undang-undang.">&copy; 2025 CocoTech Craft. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" data-en="Terms & Conditions" data-id="Syarat & Ketentuan">Terms & Conditions</a>
+                <a href="#" data-en="Privacy Policy" data-id="Kebijakan Privasi">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langEnBtn = document.getElementById('lang-en');
+            const langIdBtn = document.getElementById('lang-id');
+            // Select all elements that have either data-en or data-id attributes
+            const elements = document.querySelectorAll('[data-en], [data-id]');
+            // Select input/textarea elements for placeholder translation
+            const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
+
+            // Get preferred language from localStorage or default to English
+            let currentLang = localStorage.getItem('lang') || 'en';
+            setLanguage(currentLang); // Apply initial language
+
+            // Event listeners for language switcher buttons
+            langEnBtn.addEventListener('click', () => setLanguage('en'));
+            langIdBtn.addEventListener('click', () => setLanguage('id'));
+
+            /**
+             * Sets the website language and updates all translatable elements.
+             * @param {string} lang - The language code ('en' or 'id').
+             */
+            function setLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('lang', lang); // Save language preference
+
+                // Update active state for language buttons
+                langEnBtn.classList.remove('active');
+                langIdBtn.classList.remove('active');
+                document.getElementById(`lang-${lang}`).classList.add('active');
+
+                // Iterate over all translatable elements and update their text content
+                elements.forEach(element => {
+                    if (element.dataset[lang]) {
+                        element.textContent = element.dataset[lang];
+                    }
+                });
+
+                // Update placeholder texts for contact form inputs
+                formInputs.forEach(input => {
+                    const id = input.id;
+                    if (lang === 'id') {
+                        if (id === 'name') input.placeholder = 'Nama Anda';
+                        else if (id === 'email') input.placeholder = 'Email Anda';
+                        else if (id === 'subject') input.placeholder = 'Subjek Pesan';
+                        else if (id === 'message') input.placeholder = 'Pesan Anda';
+                    } else {
+                        if (id === 'name') input.placeholder = 'Your Name';
+                        else if (id === 'email') input.placeholder = 'Your Email';
+                        else if (id === 'subject') input.placeholder = 'Message Subject';
+                        else if (id === 'message') input.placeholder = 'Your Message';
+                    }
+                });
+
+                // Update document title
+                const titleElement = document.querySelector('title');
+                if (titleElement) {
+                    titleElement.textContent = titleElement.dataset[lang];
+                }
+            }
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent default anchor click behavior
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth' // Smooth scroll effect
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
